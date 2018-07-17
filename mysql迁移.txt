@@ -1,0 +1,16 @@
+正常情况下mysql的存储目录都是在/var/lib/mysql/下的，那么怎么将存储位置改到/data_mysql下呢？
+
+一：创建data_msyql
+[root@s1 DATA_mysql]# mkdir /data_mysql
+
+二：cp -ar mysql存储当前位置 目标位置
+[root@s1 mysql]# cp -ar /var/lib/mysql /data_mysql
+
+三：修改mysql的配置文件my.cnf
+[root@s1 mysql]# vim /etc/my.cnf
+
+四：重启mysql服务
+1 [root@s1 mysql]# service mysqld restart
+2 停止 mysqld：                                              [确定]
+3 正在启动 mysqld：                                          [确定]
+4 [root@s1 mysql]# 
